@@ -1,0 +1,76 @@
+[System]
+Name='Untitled2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=3
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='ec'
+Range=[-3 3]
+NumMFs=7
+MF1='ZO':'trimf',[-2 0 2]
+MF2='NS':'trimf',[-3 -1 1]
+MF3='PM':'trimf',[0 2 3]
+MF4='NB':'gaussmf',[-1 -3]
+MF5='NM':'trimf',[-3 -2 0]
+MF6='PS':'trimf',[-1 1 3]
+MF7='PB':'gaussmf',[1 3]
+
+[Input2]
+Name='de/dt'
+Range=[-3 3]
+NumMFs=7
+MF1='NM':'trimf',[-3 -2 0]
+MF2='ZO':'trimf',[-2 0 2]
+MF3='PM':'trimf',[0 2 3]
+MF4='NB':'gaussmf',[-1 -3]
+MF5='NS':'trimf',[-3 -1 1]
+MF6='PS':'trimf',[-1 1 3]
+MF7='PB':'gaussmf',[1 3]
+
+[Output1]
+Name='kp'
+Range=[-0.3 0.3]
+NumMFs=7
+MF1='NM':'trimf',[-0.3 -0.2 0]
+MF2='ZO':'trimf',[-0.2 0 0.2]
+MF3='PM':'trimf',[0 0.2 0.3]
+MF4='NB':'gaussmf',[-0.1 -0.3]
+MF5='NS':'trimf',[-0.3 -0.1 0.1]
+MF6='PS':'trimf',[-0.1 0.1 0.3]
+MF7='PB':'gaussmf',[0.1 0.3]
+
+[Output2]
+Name='ki'
+Range=[-0.06 0.06]
+NumMFs=7
+MF1='NM':'trimf',[-0.06 -0.04 0]
+MF2='ZO':'trimf',[-0.04 0 0.04]
+MF3='PM':'trimf',[0 0.04 0.06]
+MF4='NB':'gaussmf',[-0.02 -0.06]
+MF5='NS':'trimf',[-0.06 -0.02 0.02]
+MF6='PS':'trimf',[-0.02 0.02 0.06]
+MF7='PB':'gaussmf',[0.02 0.06]
+
+[Output3]
+Name='kd'
+Range=[-3 3]
+NumMFs=7
+MF1='NM':'trimf',[-3 -2 0]
+MF2='ZO':'trimf',[-2 0 2]
+MF3='PM':'trimf',[0 2 3]
+MF4='NB':'gaussmf',[-1 -3]
+MF5='NS':'trimf',[-3 -1 1]
+MF6='PS':'trimf',[-1 1 3]
+MF7='PB':'gaussmf',[1 3]
+
+[Rules]
+4 4, 7 4 6 (1) : 1
+4 1, 7 4 5 (1) : 1
